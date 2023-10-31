@@ -17,6 +17,19 @@ const theRing = new Movie("The Ring", "PG13", "Second-Run");
 const moviesArray = [theShining, pawPatrol, theRing];
 console.log(moviesArray);
 
+let ratingsArray = ["R", "PG13", "PG"];
+
+function assessAge(age) {
+    if (age > 16) {
+        return ratingsArray;
+    } else if (age < 17 && age > 12) {
+        let ratingsArray = ["PG13", "PG"];
+        return ratingsArray;
+    } else {
+        let ratingsArray = ["PG"];
+        return ratingsArray;
+    }
+}
 
 function ticketPrice(age, time, newRelease) {
     let price = 15;
