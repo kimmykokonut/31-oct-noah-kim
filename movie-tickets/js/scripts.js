@@ -39,61 +39,63 @@ function checkMovieAgainstRatingsArray(Movie) {
     }
 }
 
-function ticketPrice(age, time, newRelease) {
-    let price = 15;
-    if (age > 11 && age < 65) {
-        if (time > 5) {
-            if (newRelease === false) {
-                let totalPrice = price - 2;
-                return totalPrice;
-            } else return price;
-        } else if (time < 5) {
-            if (newRelease === false) {
-                let totalPrice = price - 5;
-                return totalPrice;
-            } else {
-                let totalPrice = price - 3;
-                return totalPrice;
-            }
-        }
-    } else if (age > 64) {
-        if (time > 5) {
-            if (newRelease === false) {
-                let totalPrice = price - 5;
-                return totalPrice;
-            } else {
-                let totalPrice = price - 3;
-                return totalPrice;
-            }
-        } else if (time < 5) {
-            if (newRelease === false) {
-                let totalPrice = price - 8;
-                return totalPrice;
-            } else {
-                let totalPrice = price - 6;
-                return totalPrice;
-            }
-        }
-    } else {
-        if (time > 5) {
-            if (newRelease === false) {
-                let totalPrice = price - 7;
-                return totalPrice;
-            } else {
-                let totalPrice = price - 5;
-                return totalPrice;
-            }
-        } else if (time < 5) {
-            if (newRelease === false) {
-                let totalPrice = price - 10;
-                return totalPrice;
-            } else {
-                let totalPrice = price - 8;
-                return totalPrice;
-            }
-        }
-    }
-}
+
+
+// function ticketPrice(age, time, newRelease) {
+//     let price = 15;
+//     if (age > 11 && age < 65) {
+//         if (time > 5) {
+//             if (newRelease === false) {
+//                 let totalPrice = price - 2;
+//                 return totalPrice;
+//             } else return price;
+//         } else if (time < 5) {
+//             if (newRelease === false) {
+//                 let totalPrice = price - 5;
+//                 return totalPrice;
+//             } else {
+//                 let totalPrice = price - 3;
+//                 return totalPrice;
+//             }
+//         }
+//     } else if (age > 64) {
+//         if (time > 5) {
+//             if (newRelease === false) {
+//                 let totalPrice = price - 5;
+//                 return totalPrice;
+//             } else {
+//                 let totalPrice = price - 3;
+//                 return totalPrice;
+//             }
+//         } else if (time < 5) {
+//             if (newRelease === false) {
+//                 let totalPrice = price - 8;
+//                 return totalPrice;
+//             } else {
+//                 let totalPrice = price - 6;
+//                 return totalPrice;
+//             }
+//         }
+//     } else {
+//         if (time > 5) {
+//             if (newRelease === false) {
+//                 let totalPrice = price - 7;
+//                 return totalPrice;
+//             } else {
+//                 let totalPrice = price - 5;
+//                 return totalPrice;
+//             }
+//         } else if (time < 5) {
+//             if (newRelease === false) {
+//                 let totalPrice = price - 10;
+//                 return totalPrice;
+//             } else {
+//                 let totalPrice = price - 8;
+//                 return totalPrice;
+//             }
+//         }
+//     }
+// }
 
 function handleSelect() {
     //take user input make values. 

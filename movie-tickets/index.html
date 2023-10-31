@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,30 @@
     <script src="js/scripts.js"></script>
     <title>Movie Ticket Machine</title>
 </head>
+
 <body>
     <h1>The Tiny Terror Theater</h1>
     <p>Please fill out the form to determine your ticket price</p>
+    <p>***Put info box here for pricing details***</p>
     <div class="select-form">
         <form id="user-select">
             <label for="nameInput">Name: </label>
             <input type="text" id="nameInput" name="nameInput">
             <label for="ageInput">Age: </label>
             <input type="number" id="ageInput" name="ageInput">
+            <label for="movieChoice">Which Movie?</label>
+            <select name="movieChoice" id="movieChoice">
+                <option value="1" name="theShining">The Shining</option>
+                <option value="2" name="theRing">The Ring</option>
+                <option value="3" name="pawPatrol">Paw Patrol: The Mighty Movie</option>
+            </select>
+            <label for="timeChoice">Show time: </label>
+            <select name="select-form" id="time">
+                <option value="1" name="matinee">2pm</option>
+                <option value="2" name="evening">7pm</option>
+            </select>
         </form>
     </div>
 </body>
+
 </html>
