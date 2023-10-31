@@ -37,9 +37,11 @@ Test: Add to assessAge to determine if "PG13" movie is inappropriate
 Code: assessAge(8)
 Expected Output: true
 
-Test: 
-Code:
-Expected Output:
+#### Describe Checking Movie Against Ratings Array
+
+Test: Create a function that takes a movie input and checks if its rating is included in the ratings array.
+Code: checkMovieAgainstRatingsArray(theShining[1])
+Expected Output: false
 
 Test: 
 Code:

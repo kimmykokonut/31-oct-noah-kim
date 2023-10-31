@@ -31,6 +31,14 @@ function assessAge(age) {
     }
 }
 
+function checkMovieAgainstRatingsArray(Movie) {
+    if (ratingsArray.includes(Movie.rating)) {
+        return ticketPrice();
+    } else {
+        console.log("Bad News ERROR");
+    }
+}
+
 function ticketPrice(age, time, newRelease) {
     let price = 15;
     if (age > 11 && age < 65) {
