@@ -127,9 +127,11 @@ function handleFormSubmission(e) {
     }
     let totalPrice = ticketPrice(inputAge, inputTime, chosenMovie.newRelease)
     console.log(totalPrice);
+    console.log(chosenMovie);
     document.querySelector(".name").innerText = inputName;
     document.querySelector(".total").innerText = totalPrice;
-    // document.querySelector(".title").innerText = chosenMo;
+    document.querySelector(".title").innerText = chosenMovie.title;
+    document.querySelector(".showtime").innerText = inputTime + ":00 PM";
     //jump scare for shining selection
 }
 
