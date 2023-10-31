@@ -3,11 +3,11 @@ function Movie(title, rating, release) {
     this.rating = rating;
     this.release = release;
 }
-
-function Ticket(Movie, time, age) {
+//need this? use to print Ticket.
+function Ticket(Movie, time, totalPrice) {
     this.Movie = Movie;
     this.time = time;
-    this.age = age;
+    this.totalPrice = totalPrice;
 }
 
 const theShining = new Movie("The Shining", "R", "Second-Run");
@@ -95,6 +95,11 @@ function ticketPrice(age, time, newRelease) {
     }
 }
 
+function handleSelect() {
+    //take user input make values. 
+    //int age and time
+    //run ageAssess, which will error or cascade into checkMovieArray, error or cascase into ticketPrice
+    //show ticket price
 
-// ticketPrice("40", "8:00PM", "new-release")
-//make age integer. time integer.
+    //jump scare for shining selection
+}
