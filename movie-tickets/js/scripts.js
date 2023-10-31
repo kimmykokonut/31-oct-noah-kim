@@ -1,7 +1,7 @@
-function Movie(title, rating, release) {
+function Movie(title, rating, newRelease) {
     this.title = title;
     this.rating = rating;
-    this.release = release;
+    this.newRelease = newRelease;
 }
 //need this? use to print Ticket.
 function TicketRequest(Movie, age, time) {
@@ -10,9 +10,9 @@ function TicketRequest(Movie, age, time) {
     this.time = time;
 }
 
-const theShining = new Movie("The Shining", "R", "Second-Run");
-const pawPatrol = new Movie("Paw Patrol: The Mighty Movie", "PG", "New-Release");
-const theRing = new Movie("The Ring", "PG13", "Second-Run");
+const theShining = new Movie("The Shining", "R", false);
+const pawPatrol = new Movie("Paw Patrol: The Mighty Movie", "PG", true);
+const theRing = new Movie("The Ring", "PG13", false);
 
 const moviesArray = [theShining, pawPatrol, theRing];
 
@@ -30,12 +30,10 @@ function assessAge(age) {
     }
 }
 
-function checkMovieAgainstRatingsArray(Movie, age) {
+function checkMovieAgainstRatingsArray(inputRating, age) {
     let ratingsArray = assessAge(age);
-    console.log(ratingsArray);
-    console.log(Movie.rating);
-    if (ratingsArray.includes(Movie.rating)) {
-        return ticketPrice();
+    if (ratingsArray.includes(inputRating)) {
+        return true;
     } else {
         console.log("Bad News ERROR");
     }
@@ -113,17 +111,21 @@ function handleFormSubmission(e) {
             return objectMovie;
         } else {
             let objectMovie = pawPatrol;
-            console.log(objectMovie);
             return objectMovie;
         }
     }
     const inputTime = parseInt(document.getElementById("timeChoice").value);
     let chosenMovie = findMovie(inputMovie);
-    console.log(chosenMovie);
-    checkMovieAgainstRatingsArray(Movie, inputAge)    
-    let newTicketRequest = new TicketRequest(chosenMovie, inputAge, inputTime);
-
-    //run ageAssess, which will error or cascade into checkMovieArray, error or cascase into ticketPrice
+    let inputRating = chosenMovie.rating
+    checkMovieAgainstRatingsArray(inputRating, inputAge) 
+    if (checkMovieAgainstRatingsArray(inputRating, inputAge)) {
+        ticketPrice(inputAge, inputTime, chosenMovie.newRelease);
+        console.log(ticketPrice(inputAge, inputTime, chosenMovie.newRelease));
+        console.log("yay");
+    } else {
+        console.log("too young");
+    }
+    
     //show ticket price
 
     //jump scare for shining selection
