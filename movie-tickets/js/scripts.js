@@ -125,9 +125,11 @@ function handleFormSubmission(e) {
     } else {
         console.log("too young");
     }
-    
-    //show ticket price
-
+    let totalPrice = ticketPrice(inputAge, inputTime, chosenMovie.newRelease)
+    console.log(totalPrice);
+    document.querySelector(".name").innerText = inputName;
+    document.querySelector(".total").innerText = totalPrice;
+    // document.querySelector(".title").innerText = chosenMo;
     //jump scare for shining selection
 }
 
