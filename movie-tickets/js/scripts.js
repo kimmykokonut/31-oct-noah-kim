@@ -16,7 +16,7 @@ const theRing = new Movie("The Ring", "PG13", false);
 
 const moviesArray = [theShining, pawPatrol, theRing];
 
-let ratingsArray = ["R","PG13", "PG"];
+let ratingsArray = ["R", "PG13", "PG"];
 
 function assessAge(age) {
     if (age > 16) {
@@ -115,29 +115,32 @@ function handleFormSubmission(e) {
     const inputTime = parseInt(document.getElementById("timeChoice").value);
     let chosenMovie = findMovie(inputMovie);
     let inputRating = chosenMovie.rating
-    checkMovieAgainstRatingsArray(inputRating, inputAge) 
+    checkMovieAgainstRatingsArray(inputRating, inputAge)
     if (checkMovieAgainstRatingsArray(inputRating, inputAge)) {
         ticketPrice(inputAge, inputTime, chosenMovie.newRelease);
         let totalPrice = ticketPrice(inputAge, inputTime, chosenMovie.newRelease)
-        document.querySelector("div#finalPrice").removeAttribute("class");
-        document.querySelector(".name").innerText = inputName;
-        document.querySelector(".total").innerText = totalPrice;
-        document.querySelector(".title").innerText = chosenMovie.title;
-        document.querySelector(".showtime").innerText = inputTime + ":00 PM";
-    } else {
         const h2 = document.createElement("h2");
         const body = document.querySelector("body");
-        h2.append("You're too young!")
-        body.append(h2);
+        h2.append("Your Ticket");
+        const pName = document.createElement("p");
+        pName.append("Name: " + inputName);
+        const pPrice = document.createElement("p");
+        pPrice.append("Price: $" + totalPrice)
+        const pTitle = document.createElement("p");
+        pTitle.append("Movie Title: " + chosenMovie.title);
+        const pShowtime = document.createElement("p");
+        pShowtime.append("Showtime: " + inputTime + ":00 PM")
+
+        body.append(h2, pName, pPrice, pTitle, pShowtime);
+    } else {
+        const h3 = document.createElement("h3");
+        const body = document.querySelector("body");
+        h3.append("You're too young!")
+        body.append(h3);
     }
-    // let totalPrice = ticketPrice(inputAge, inputTime, chosenMovie.newRelease)
-    // document.querySelector(".name").innerText = inputName;
-    // document.querySelector(".total").innerText = totalPrice;
-    // document.querySelector(".title").innerText = chosenMovie.title;
-    // document.querySelector(".showtime").innerText = inputTime + ":00 PM";
     //jump scare for shining selection
 }
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     document.querySelector("form#userSelect").addEventListener("submit", handleFormSubmission);
 });
