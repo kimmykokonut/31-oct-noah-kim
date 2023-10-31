@@ -43,6 +43,9 @@ Test: Create a function that takes a movie input and checks if its rating is inc
 Code: checkMovieAgainstRatingsArray(theShining[1])
 Expected Output: false
 
-Test: 
-Code:
-Expected Output:
+#### Describe Find Movie Function
+
+Test: It will take a user's input movie and grab the associated object movie and its properties.
+Code: findMovie("The Shining")
+Expected Output: Movie {...}
+

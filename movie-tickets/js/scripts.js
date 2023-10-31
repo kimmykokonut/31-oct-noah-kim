@@ -4,10 +4,10 @@ function Movie(title, rating, release) {
     this.release = release;
 }
 //need this? use to print Ticket.
-function Ticket(Movie, time, totalPrice) {
+function TicketRequest(Movie, age, time) {
     this.Movie = Movie;
+    this.age = age;
     this.time = time;
-    this.totalPrice = totalPrice;
 }
 
 const theShining = new Movie("The Shining", "R", "Second-Run");
@@ -97,11 +97,36 @@ function checkMovieAgainstRatingsArray(Movie) {
 //     }
 // }
 
-function handleSelect() {
-    //take user input make values. 
+function findMovie(inputMovie) {
+    if (inputMovie === "The Shining") {
+        let objectMovie = theShining;
+        return objectMovie;
+    } else if (inputMovie === "The Ring") {
+        let objectMovie = theRing;
+        return objectMovie;
+    } else {
+        let objectMovie = pawPatrol;
+        return objectMovie;
+    }
+}
+
+function handleFormSubmission(e) {
+    e.preventDefault();
+    const inputName = document.querySelector("input#nameInput").value;
+    const inputAge = parseInt(document.querySelector("input#ageInput")).value;
+    console.log(inputAge);
+    const inputMovie = document.getElementById("movieChoice").value;
+    const inputTime = document.getElementById("timeChoice").value;
+    findMovie(inputMovie);
+    let newTicketRequest = new TicketRequest(objectMovie, inputAge, inputTime);
+   
     //int age and time
     //run ageAssess, which will error or cascade into checkMovieArray, error or cascase into ticketPrice
     //show ticket price
 
     //jump scare for shining selection
 }
+
+window.addEventListener("load", function() {
+    document.querySelector("form#userSelect").addEventListener("submit", handleFormSubmission);
+});
