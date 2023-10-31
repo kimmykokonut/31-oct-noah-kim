@@ -10,6 +10,14 @@ function Ticket(Movie, time, age) {
     this.age = age;
 }
 
+const theShining = new Movie("The Shining", "R", "Second-Run");
+const pawPatrol = new Movie("Paw Patrol: The Mighty Movie", "PG", "New-Release");
+const theRing = new Movie("The Ring", "PG13", "Second-Run");
+
+const moviesArray = [theShining, pawPatrol, theRing];
+console.log(moviesArray);
+
+
 function ticketPrice(age, time, newRelease) {
     let price = 15;
     if (age > 11 && age < 65) {

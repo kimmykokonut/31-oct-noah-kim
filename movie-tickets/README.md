@@ -11,13 +11,13 @@ Code: let ticket = new Ticket(Movie, "5:00 PM", "23")
 console.log("ticket")
 Expected Output: {Movie: Movie, time: "5:00PM", age: "23"}
 
-Test: 
-Code:
-Expected Output:
+Test: Create ticket price function, where ticket value is determined by age, time of day and release date
+Code: ticketPrice("40", "8:00PM", "new-release")
+Expected Output: 15
 
-Test: 
-Code:
-Expected Output:
+Test: Create objects for each movie and store them in an array.
+Code: console.log(moviesArray);
+Expected Output: [Movie, Movie, Movie];
 
 Test: 
 Code:
