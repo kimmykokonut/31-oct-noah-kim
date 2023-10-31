@@ -121,17 +121,26 @@ function handleFormSubmission(e) {
     if (checkMovieAgainstRatingsArray(inputRating, inputAge)) {
         ticketPrice(inputAge, inputTime, chosenMovie.newRelease);
         console.log(ticketPrice(inputAge, inputTime, chosenMovie.newRelease));
+        let totalPrice = ticketPrice(inputAge, inputTime, chosenMovie.newRelease)
+        document.querySelector("div#finalPrice").removeAttribute("class");
+        document.querySelector(".name").innerText = inputName;
+        document.querySelector(".total").innerText = totalPrice;
+        document.querySelector(".title").innerText = chosenMovie.title;
+        document.querySelector(".showtime").innerText = inputTime + ":00 PM";
         console.log("yay");
     } else {
+        const h2 = document.createElement("h2");
+        const body = document.querySelector("body");
+        h2.append("You're too young!")
+        body.append(h2);
+
         console.log("too young");
     }
-    let totalPrice = ticketPrice(inputAge, inputTime, chosenMovie.newRelease)
-    console.log(totalPrice);
-    console.log(chosenMovie);
-    document.querySelector(".name").innerText = inputName;
-    document.querySelector(".total").innerText = totalPrice;
-    document.querySelector(".title").innerText = chosenMovie.title;
-    document.querySelector(".showtime").innerText = inputTime + ":00 PM";
+    // let totalPrice = ticketPrice(inputAge, inputTime, chosenMovie.newRelease)
+    // document.querySelector(".name").innerText = inputName;
+    // document.querySelector(".total").innerText = totalPrice;
+    // document.querySelector(".title").innerText = chosenMovie.title;
+    // document.querySelector(".showtime").innerText = inputTime + ":00 PM";
     //jump scare for shining selection
 }
 
